@@ -1,0 +1,135 @@
+[
+	{
+		"tit": "购物指南",
+		"con": [
+			{
+				"text": "购物流程",
+				"link": "http://help.jd.com/user/issue/list-29.html"
+			},
+			{
+				"text": "会员介绍",
+				"link": "http://help.jd.com/user/issue/list-151.html"
+			},
+			{
+				"text": "生活旅行",
+				"link": "http://help.jd.com/user/issue/list-297.html"
+			},
+			{
+				"text": "常见问题",
+				"link": "http://help.jd.com/user/issue.html"
+			},
+			{
+				"text": "大家电",
+				"link": "http://help.jd.com/user/issue/list-136.html"
+			},
+			{
+				"text": "联系客服",
+				"link": "http://help.jd.com/user/index.html"
+			}
+		]
+	},
+	{
+		"tit": "配送方式",
+		"con": [
+			{
+				"text": "上门自提",
+				"link": "http://help.jd.com/user/issue/list-81-100.html"
+			},
+			{
+				"text": "211限时达",
+				"link": "http://help.jd.com/user/issue/list-81.html"
+			},
+			{
+				"text": "配送服务查询",
+				"link": "http://help.jd.com/user/issue/103-983.html"
+			},
+			{
+				"text": "配送费收取标准",
+				"link": "http://help.jd.com/user/issue/109-188.html"
+			},
+			{
+				"text": "海外配送",
+				"link": "http://en.jd.com/chinese.html"
+			}
+		]
+	},
+	{
+		"tit": "支付方式",
+		"con": [
+			{
+				"text": "货到付款",
+				"link": "http://help.jd.com/user/issue/list-172.html"
+			},
+			{
+				"text": "在线支付",
+				"link": "http://help.jd.com/user/issue/list-173.html"
+			},
+			{
+				"text": "分期付款",
+				"link": "http://help.jd.com/user/issue/list-176.html"
+			},
+			{
+				"text": "邮局汇款",
+				"link": "http://help.jd.com/user/issue/list-174.html"
+			},
+			{
+				"text": "公司转账",
+				"link": "http://help.jd.com/user/issue/list-175.html"
+			}
+		]
+	},
+	{
+		"tit": "售后服务",
+		"con": [
+			{
+				"text": "售后政策",
+				"link": "http://help.jd.com/user/issue/321-981.html"
+			},
+			{
+				"text": "价格保护",
+				"link": "http://help.jd.com/user/issue/list-132.html"
+			},
+			{
+				"text": "退款说明",
+				"link": "http://help.jd.com/user/issue/130-978.html"
+			},
+			{
+				"text": "返修/退换货",
+				"link": "http://myjd.jd.com/repair/repairs.action"
+			},
+			{
+				"text": "取消订单",
+				"link": "http://help.jd.com/user/issue/list-50.html"
+			}
+		]
+	},
+	{
+		"tit": "特色服务",
+		"con": [
+			{
+				"text": "夺宝岛",
+				"link": "http://help.jd.com/user/issue/list-133.html"
+			},
+			{
+				"text": "DIY装机",
+				"link": "http://help.jd.com/user/issue/list-134.html"
+			},
+			{
+				"text": "延保服务",
+				"link": "http://fuwu.jd.com/"
+			},
+			{
+				"text": "京东E卡",
+				"link": "http://o.jd.com/market/index.action"
+			},
+			{
+				"text": "京东通信",
+				"link": "http://mobile.jd.com/"
+			},
+			{
+				"text": "京东JD+",
+				"link": "http://s.jd.com/"
+			}
+		]
+	}
+]

@@ -1,0 +1,863 @@
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="CGT">
+		<title>京东(JD.COM)</title>
+		<script src='https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js'></script>
+		<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="./js/unslider.min.js"></script>
+		<script src="./js/swiper.min.js"></script>
+		<link rel="stylesheet" href="./css/swiper.min.css">
+		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="./styles/index.css">
+		<style>
+
+		</style>
+	</head>
+
+	<body>
+		<header class="header">
+			<a href="javascript:;" class="header-ad">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="glyphicon glyphicon-remove" id="close"></span></button>
+			</a>
+		</header>
+		<nav class="nav-wrap">
+			<div class="nav">
+				<ul class="fl pull-left clearfix">
+					<!-- <a href="" class="logo"></a> -->
+					<li class="location">
+						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span><span class="place">江苏</span>
+					</li>
+					<!-- 下拉地址列表 -->
+					<div class="place_list">
+						{{each place}}
+						<div class="place_item">
+							<a href="javascript:void(0)">{{$value}}</a>
+						</div>
+						{{/each}}
+					</div>
+				</ul>
+				<ul class="fr pull-right clearfix">
+					<li><a href="/user/login.html" class="login">你好，请登录&nbsp;</a> <a href="/user/register.html" class="register">免费注册</a></li>
+					<li><a href="">我的订单</a></li>
+					<li class="myjd"><a href="">我的京东</a> <span class="glyphicon glyphicon glyphicon-menu-down"></span> </li>
+					<li><a href="">京东会员</a></li>
+					<li><a href="">企业采购</a></li>
+					<li class="khservice"><a href="">客户服务</a><span class="glyphicon glyphicon glyphicon-menu-down"></span></li>
+					<li class="sitenav"><a href="">网站导航</a><span class="glyphicon glyphicon glyphicon-menu-down"></span></li>
+					<li><a href="">手机京东</a></li>
+					<div class="myjd_list">
+						{{each wj[0].item[1].fores fores index}} {{each fores fore }}
+						<a href="{{fore.link}}">{{fore.text}}</a> {{/each}} {{if index==1}}
+						<hr> {{/if}} {{/each}}
+					</div>
+					<div class="khservice_list">
+						<h5><a href="">客户</a></h5>
+						{{each wj[0].item[4].fores fores index}} {{each fores fore }}
+						<a href="{{fore.link}}">{{fore.text}}</a> {{/each}} {{if index==0}}
+						<hr>
+						<h5><a href="">商户</a>
+						</h5>
+						{{/if}} {{/each}}
+
+
+					</div>
+					<div class="sitenav_list">
+						{{each wj[0].item[5].fores fores}} {{each fores fore}}
+						<a href="{{fore.link}}">{{fore.text}}</a> {{/each}} {{/each}}
+					</div>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="search-wrap">
+			<img class="logo" src="./images/logo.v3.jpg" alt="">
+			<div class="search">
+				<i></i>
+				<input type="text" class="inp-search" name="" placeholder="新品首发送空净">
+				<button class="btn-search" type=""><span class="glyphicon glyphicon-search"></span></button>
+			</div>
+			<div class="cart">
+				<span class="glyphicon glyphicon-shopping-cart"></span>
+				<a href="">我的购物车</a>
+				<span class="count">
+					7
+				</span>
+			</div>
+			<div class="QRcode">
+				<img src="./images/QCode.png" alt="">
+			</div>
+			<div class="hotwords">
+				<a href="">满199减100</a>
+				<a href="">小米MIX2</a>
+				<a href="">秋播农资</a>
+				<a href="">奢侈品箱包</a>
+				<a href="">预约省800</a>
+				<a href="">烤箱</a>
+				<a href="">汽车脚垫</a>
+				<a href="">采棉节</a>
+				<a href="">泡茶壶</a>
+			</div>
+
+			<div class="navitem">
+				<a href="">秒杀</a>
+				<a href="">优惠券</a>
+				<a href="">闪购</a>
+				<a href="">拍卖</a>|
+				<a href="">服装城</a>
+				<a href="">京东超市</a>
+				<a href="">生鲜</a>
+				<a href="">全球购</a>|
+				<a href="">京东金融</a>
+			</div>
+			<img class="misale" src="./images/misale.png" alt="">
+		</div>
+		<div class="fs">
+			<div class="sidebar">
+				<img class="sidebar-ad" src="./images/sidebar-ad.png" alt="">
+			</div>
+			<div class="nav-menu">
+				<ul>
+					{{each catedata[0] cate_item}}
+					<li>
+						{{each cate_item cate_lk}}
+						<a href="{{cate_lk.link}}">{{cate_lk.text}}</a> {{/each}}
+					</li>
+					{{/each}}
+				</ul>
+			</div>
+			<div class="fs_col2">
+				<div class="carousel swiper-container">
+					<!--swiper容器[可以随意更改该容器的样式-->
+					<div class="swiper-wrapper">
+						<div class="swiper-slide"><img src="/images/s1.jpg" alt=""></div>
+						<div class="swiper-slide"><img src="/images/s2.jpg" alt=""></div>
+						<div class="swiper-slide"><img src="/images/s3.jpg" alt=""></div>
+						<div class="swiper-slide"><img src="/images/s4.jpg" alt=""></div>
+						<div class="swiper-slide"><img src="/images/s5.jpg" alt=""></div>
+						<div class="swiper-slide"><img src="/images/s6.jpg" alt=""></div>
+					</div>
+					<div class="swiper-pagination"></div>
+					<!--分页器-->、
+				</div>
+
+				<div class="slider_extend">
+					<div class=" bi-imgl">
+						<img src="./images/slider-imgl.png" alt="">
+					</div>
+					<div class=" bi-imgr">
+						<img src="./images/slider-imgr.png" alt="">
+					</div>
+				</div>
+			</div>
+			<div class="fs_col3">
+				<div class="J_user">
+					<div class="user">
+						<div class="user_avatar">
+							<img src="./images/no_login.jpg" alt="">
+						</div>
+						<p>
+							<span>Hi,欢迎来到京...</span><br>
+							<a href="/user/login.html">登录</a>
+							<a href="/user/register.html">注册</a>
+						</p>
+					</div>
+					<div class="user_profit">
+						<a href="">新人福利</a>
+						<a href="">PLUS会员</a>
+					</div>
+				</div>
+				<div class="J_news">
+					<div class="news_tab clearfix">
+						<a href="">促销</a> &#x3000;|&#x3000;
+						<a href="">公告</a>
+						<a href="" class="more">更多</a>
+					</div>
+					<div class="tab_content clearfix">
+						<ul>
+							<li><a href="">索粉节！为信仰低至6折！</a></li>
+							<li><a href="">品质家纺跨店2件8折</a></li>
+							<li><a href="">家纺自营满199减100</a></li>
+							<li><a href="">万件好物1元秒</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="J_service">
+					<div class="service_list">
+						<ul class="clearfix">
+							<li><a href="">话费</a><span class="service_corner"></span></li>
+							<li><a href="">机票</a></li>
+							<li><a href="">酒店</a></li>
+							<li><a href="">游戏</a></li>
+						</ul>
+
+						<div class="tab-iframe">
+							<a href="" class="tab-item-selected">话费充值</a>
+							<a href="">流量充值</a>
+							<a href="">套餐变更</a>
+						</div>
+						<div class="content-iframe">
+							<form>
+								<div class="tel-num">
+									号码&nbsp;&nbsp;<input type="text" name="" id="">
+								</div>
+								<div class="face_val">
+									面值&nbsp;&nbsp;<select name="" id="">
+									<option value="10">10元</option>	
+									<option value="20">20元</option>	
+									<option value="30">30元</option>	
+									<option value="50">50元</option>	
+									<option value="100" selected>100元</option>	
+									<option value="200">200元</option>	
+									<option value="300">300元</option>	
+									<option value="500">500元</option>
+								</select>
+									<span>￥98.0-￥100.0</span>
+								</div>
+								<button type="">快速充值</button>
+								<div class="hot">
+									<i></i>
+									<span>抢50元话费券</span>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="J_f">
+
+			<div class="box">
+				<div class="box_hd">
+					<i class="box_hd_dec"></i>
+					<s class="clock"></s>
+					<div class="box_tit">
+						京东秒杀
+					</div>
+					<div class="des">
+						<a href="">总有你想不到的低价<i></i></a>
+					</div>
+				</div>
+				<div class="countdown clearfix">
+					<div class="sk_cd_tip">
+						当前场次
+					</div>
+					<div class="time">
+						<div class="time_item">00
+						</div>
+						<div class="separate">
+							<i></i>
+							<i></i>
+						</div>
+						<div class="time_item">00
+						</div>
+						<div class="separate">
+							<i></i>
+							<i></i>
+						</div>
+						<div class="time_item">00
+						</div>
+					</div>
+					<div class="sk_cd_tip">
+						后结束抢购
+					</div>
+				</div>
+			</div>
+
+			<div class="ms_box_wrap">
+				<span id="prev" class="glyphicon glyphicon-menu-left"></span>
+				<span id="next" class="glyphicon glyphicon-menu-right"></span>
+				<!-- <div class="ppg">
+					<img src="./images/ppg1.jpg" alt="">
+				</div> -->
+
+				<div class="swiper-containe" style="width:180px;height:225px">
+					<!--swiper容器[可以随意更改该容器的样式-->
+					<div class="swiper-wrapper">
+						<div class="swiper-slide"><img src="./images/ppg1.jpg"></div>
+						<div class="swiper-slide"><img src="./images/ppg2.jpg"></div>
+					</div>
+					<div class="swiper-pagination"></div>
+					<!--分页器-->、
+					<!-- <div class="swiper-button-prev"></div> -->
+					<!--前进按钮-->
+					<!-- <div class="swiper-button-next"></div> -->
+					<!--后退按钮-->
+				</div>
+				<div class="ms_box_wrapper">
+					<div class="ms_box">
+						<div class="ms_item">
+							<img src="./images/ms3.jpg" alt="">
+							<p>联想（ThinkPad） E470c（20H3A00VCD）14英寸笔记本电脑（i5-6200U 4G 500G Win10）黑色</p>
+							<span class="price">¥5988.00<s>¥6988.00</s></span>
+						</div>
+						<div class="ms_item">
+							<img src="./images/ms2.jpg" alt="">
+							<p>联想（ThinkPad） E470c（20H3A00VCD）14英寸笔记本电脑（i5-6200U 4G 500G Win10）黑色</p>
+							<span class="price">¥5988.00<s>¥6988.00</s></span>
+						</div>
+						<div class="ms_item">
+							<img src="./images/ms3.jpg" alt="">
+							<p>联想（ThinkPad） E470c（20H3A00VCD）14英寸笔记本电脑（i5-6200U 4G 500G Win10）黑色</p>
+							<span class="price">¥5988.00<s>¥6988.00</s></span>
+						</div>
+						<div class="ms_item">
+							<img src="./images/ms2.jpg" alt="">
+							<p>Apple MacBook Air 13.3英寸笔记本电脑 银色(Core i5 处理器/8GB内存/128GB SSD闪存 MMGF2CH/A)</p>
+							<span class="price">¥5988.00<s>¥6988.00</s></span>
+						</div>
+						<div class="ms_item">
+							<img src="./images/ms3.jpg" alt="">
+							<p>Apple MacBook Air 13.3英寸笔记本电脑 银色(Core i5 处理器/8GB内存/128GB SSD闪存 MMGF2CH/A)</p>
+							<span class="price">¥5988.00<s>¥6988.00</s></span>
+						</div>
+					</div>
+					<div class="ms_box">
+						<div class="ms_item">
+							<img src="./images/ms2.jpg" alt="">
+							<p>联想（ThinkPad） E470c（20H3A00VCD）14英寸笔记本电脑（i5-6200U 4G 500G Win10）黑色</p>
+							<span class="price">¥5988.00<s>¥6988.00</s></span>
+						</div>
+						<div class="ms_item">
+							<img src="./images/ms2.jpg" alt="">
+							<p>Apple MacBook Air 13.3英寸笔记本电脑 银色(Core i5 处理器/8GB内存/128GB SSD闪存 MMGF2CH/A)</p>
+							<span class="price">¥5988.00<s>¥6988.00</s></span>
+						</div>
+						<div class="ms_item">
+							<img src="./images/ms3.jpg" alt="">
+							<p>联想（ThinkPad） E470c（20H3A00VCD）14英寸笔记本电脑（i5-6200U 4G 500G Win10）黑色</p>
+							<span class="price">¥5988.00<s>¥6988.00</s></span>
+						</div>
+						<div class="ms_item">
+							<img src="./images/ms2.jpg" alt="">
+							<p>Apple MacBook Air 13.3英寸笔记本电脑 银色(Core i5 处理器/8GB内存/128GB SSD闪存 MMGF2CH/A)</p>
+							<span class="price">¥5988.00<s>¥6988.00</s></span>
+						</div>
+						<div class="ms_item">
+							<img src="./images/ms3.jpg" alt="">
+							<p>联想（ThinkPad） E470c（20H3A00VCD）14英寸笔记本电脑（i5-6200U 4G 500G Win10）黑色</p>
+							<span class="price">¥5988.00<s>¥6988.00</s></span>
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+		</div>
+
+		<div class="J_flist">
+			<div class="fbt_col1">
+				<div class="box">
+					<div class="box_hd">
+						<i class="box_hd_arrow"></i>
+						<i class="box_hd_dec"></i>
+						<div class="box_tit">
+							<!-- 发现好货 -->
+							{{find[0].boxHd.title}}
+						</div>
+						<div class="des">
+							<a href="{{find[0].boxHd.subTitLink}}">{{find[0].boxHd.subtitle}}<i></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="f_goods">
+					{{each find[0].boxBd.item item}}
+					<div class="f_good">
+						<a href="{{item.link}}">{{item.text}}</a>
+						<img src="{{item.img}}" alt="">
+					</div>
+					{{/each}}
+				</div>
+			</div>
+			<div class="fbt_col2">
+				<div class="box">
+					<div class="box_hd">
+						<i class="box_hd_arrow"></i>
+						<i class="box_hd_dec"></i>
+						<!-- 会买专辑 -->
+						<div class="box_tit">
+							{{sup[0].boxHd.title}}
+						</div>
+						<div class="des">
+							<a href="{{sup[0].boxHd.subTitLink}}">{{sup[0].boxHd.subtitle}}<i></i></a>
+						</div>
+					</div>
+				</div>
+
+				<div class="hm">
+					<span id="prev" class="glyphicon glyphicon-menu-left"></span>
+					<span id="next" class="glyphicon glyphicon-menu-right"></span> {{each sup[0].boxBd.item item}}
+					<div class="hm_items">
+						{{each item subitem index}}
+						<div class="hm_item">
+							<p>
+								{{subitem.title}}
+							</p>
+							<img src="{{subitem.imgs[0]}}" alt="">
+							<img src="{{subitem.imgs[1]}}" alt="">
+							<img src="{{subitem.imgs[2]}}" alt="">
+						</div>
+						{{if index==0}}
+						<div class="sepr"></div>
+						{{/if}} {{/each}}
+					</div>
+					{{/each}}
+					<div class="indicates">
+						<span class="active"></span>
+						<span></span>
+						<span></span>
+					</div>
+				</div>
+			</div>
+			<div class="fbt_col3">
+				<div class="box">
+					<div class="box_hd">
+						<i class="box_hd_arrow"></i>
+						<i class="box_hd_dec"></i>
+						<!-- 排行榜 -->
+						<div class="box_tit">
+							{{top[0].boxHd.title}}
+						</div>
+						<div class="des">
+							<a href="{{top[0].boxHd.subTitLink}}">{{top[0].boxHd.subtitle}}<i></i></a>
+						</div>
+					</div>
+				</div>
+				<!-- 排行榜标签页 -->
+				<div class="ph_tab">
+					<div class="ph_tabhead">
+						<div class="top_tab_active"></div>
+						{{each top[0].boxBd.title item}}
+						<a href="{{item.link}}">{{item.text}}</a> {{/each}}
+					</div>
+					<div class="ph_tabcontent clearfix">
+						{{each top[0].boxBd.item[0] item index}}
+						<div class="ph_item">
+							<a href="{{item.link}}">
+								<div class="ph_item_rank">{{index+1}}</div>
+								<img src="{{item.img}}" alt="">
+								<p>
+									{{item.text}}
+								</p>
+							</a>
+						</div>
+						{{/each}}
+
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="J_coupon">
+			<div class="coupon_col1">
+				<div class="box">
+					<div class="box_hd">
+						<i class="box_hd_arrow"></i>
+						<i class="box_hd_dec"></i>
+						<!-- 领券中心 -->
+						<div class="box_tit">
+							{{quan[0].boxHd.title}}
+						</div>
+						<div class="des">
+							<a href="{{quan[0].boxHd.subTitLink}}">{{quan[0].boxHd.subtitle}}<i></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="content clearfix">
+					{{each quan[0].boxBd.item item}}
+					<div class="coupon_item">
+						<a href="{{item.link}}">
+							<div class="coupon_info">
+								<p class="coupon_price"><i>¥</i>{{item.coupon.price}}</p>
+								<p class="coupon_desc">
+									{{item.coupon.desc}}
+								</p>
+								<p class="coupon_limit">
+									<i class="mod_ver"></i>
+									<span class="coupon_limit_txt">{{item.coupon.limit}}</span>
+								</p>
+								<p class="coupon_more" clstag="h|keycount|2016|17c01">{{item.coupon.more}}</p>
+							</div>
+							<img src="{{item.img}}" alt="">
+						</a>
+					</div>
+					{{/each}}
+
+				</div>
+			</div>
+			<div class="coupon_col2">
+				<div class="box">
+					<div class="box_hd">
+						<i class="box_hd_arrow"></i>
+						<i class="box_hd_dec"></i>
+						<!-- 	me -->
+						<div class="box_tit">
+							{{fineME[0].boxHd.title}}
+						</div>
+						<div class="des">
+							<a href="{{fineME[0].boxHd.subTitLink}}">{{fineME[0].boxHd.subtitle}}<i></i></a>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="content swiper-container" style="width:390px;height:210px">
+					<!--swiper容器[可以随意更改该容器的样式-->
+					<div class="swiper-wrapper">
+						{{each fineME[0].boxBd.item item}}
+						<div class="swiper-slide mime_show">
+							<a href="item.link">
+									<img src="{{item.img}}" alt="">
+									<div class="mime_desc">
+										<span class="mime_title">
+									 {{item.mine.title}}
+									 <p><span>{{item.mine.desc}}</span><a href="">查看原文></a> </p>
+							</span>
+							<span class="mime_seen"><i class="mime_seen_ico"></i>{{item.mine.seen}}</span>
+						</div>
+						</a>
+					</div>
+					{{/each}}
+				</div>
+				<div class="swiper-pagination"></div>
+				<!--分页器-->、
+				<!-- <div class="swiper-button-prev"></div> -->
+				<!--前进按钮-->
+				<!-- <div class="swiper-button-next"></div> -->
+				<!--后退按钮-->
+
+				<!-- 前进后退按钮 -->
+				<span id="prev" class="glyphicon glyphicon-menu-left swiper-button-prev2"></span>
+				<span id="next" class="glyphicon glyphicon-menu-right swiper-button-next2"></span>
+			</div>
+
+		</div>
+		</div>
+
+		<!-- 近期活动 -->
+		<div class="rec_list">
+			<div class="rec_item clearfix">
+				<a href=""><img src="./images/r1.png" alt=""></a>
+				<a href=""><img src="./images/r2.jpg" alt=""></a>
+				<a href=""><img src="./images/r3.jpg" alt=""></a>
+			</div>
+		</div>
+
+		<div class="J_f_lift">
+			<div class="ftit">
+				<div class="grid_c1 ftit_inner">
+					<h3 id="enjoy">享品质</h3>
+				</div>
+			</div>
+
+			<div class="grid_c1">
+				<ul class="entry_list clearfix">
+					<li id="J_live">
+						<div class="live_tit">
+							京东直播
+							<span>更多<i class="arrow_right"></i></span>
+						</div>
+						<a class="live_playbtn"> </a>
+						<div class="live_info">
+							<h5 class="live_info_name"><i class="live_info_name_ico"></i>北京和睦家医院女性健康时尚论坛</h5>
+							<p class="live_info_desc">女性健康知识盛宴送优惠券</p>
+						</div>
+						<!--swiper容器[可以随意更改该容器的样式-->
+						<div class="swiper-wrapper">
+							<div class="swiper-slide" style='background-color: white'>
+								<img src="./images/lv1.jpg">
+								<div class="live_item_mask"></div>
+							</div>
+							<div class="swiper-slide" style='background-color: white'>
+								<img src="./images/lv2.jpg">
+								<div class="live_item_mask"></div>
+							</div>
+							<div class="swiper-slide" style='background-color: white'>
+								<img src="./images/lv3.jpg">
+								<div class="live_item_mask"></div>
+							</div>
+							<div class="swiper-slide" style='background-color: white'>
+								<img src="./images/lv4.jpg">
+								<div class="live_item_mask"></div>
+							</div>
+						</div>
+						<div class="swiper-pagination"></div>
+						<!--分页器-->、
+						<div class="swiper-button-prev"></div>
+						<!--前进按钮-->
+						<div class="swiper-button-next"></div>
+						<!--后退按钮-->
+					</li>
+					{{each entry item}}
+
+					<li class="entry_item{{$index+1}}">
+						<div class="entry_bg">
+							<div class="entry_info">
+								<h4 class="entry_info_tit">{{item.title}}</h4>
+								<p class="entry_info_desc">{{item.desc}}</p>
+							</div>
+						</div>
+						<img src="{{item.img}}" alt=""></li>
+					{{/each}}
+			</div>
+		</div>
+		<!-- 近期活动 -->
+		<div class="rec_list">
+			<div class="rec_item clearfix">
+				<a href=""><img src="./images/r4.jpg" alt=""></a>
+				<a href=""><img src="./images/r5.jpg" alt=""></a>
+				<a href=""><img src="./images/r6.jpg" alt=""></a>
+			</div>
+		</div>
+
+		<!-- 爱生活 -->
+		<div class="J_f_lift">
+			<div class="ftit">
+				<div class="grid_c1 ftit_inner">
+					<h3 id="love">爱生活</h3>
+				</div>
+			</div>
+			<div class="loves">
+				{{each girdItem item}}
+				<div class="love">
+					<div class="love_head">
+						<div class="love_tit">{{item.title}}</div>
+						<div class="love_QRcode"></div>
+						<div class="love_tags">
+							{{each item.tags tag}}
+							<a href="{{tag.link}}">{{tag.text}}</a> {{/each}}
+						</div>
+					</div>
+					{{each item.body body}}
+					<div class="love_content">
+						{{each body.cover cover}}
+						<div class="pt_cover">
+							<a href="{{cover.link}}"><img src="{{cover.img}}" alt=""></a>
+						</div>
+						{{/each}} {{each body.pbi pbi}}
+						<div class="pt_bi">
+							<a href="{{item.link}}">
+								<div class="pt_bi_tit">{{pbi.title}}</div>
+								<div class="pt_bi_stit">{{pbi.promo}}</div>
+								<img src="{{pbi.img}}" alt="">
+							</a>
+						</div>
+						{{/each}}
+						<div class="pt_more_wrap">
+							{{each body.more item}}
+							<div class="pt_more">
+								<a href="{{item.link}}"><img src="{{item.img}}" alt=""></a>
+							</div>
+							{{/each}}
+						</div>
+
+						<div class="pt_ft swiper-container">
+
+							<div class="swiper-wrapper">
+								{{each item.foot body index}} {{if index==0}}
+								<ul class="swiper-slide">
+									{{/if}} {{if index
+									<12}} <li><a href="{{body.link}}"><img src="{{body.img}}" alt=""></a></li>
+										{{/if}} {{if index==5}}
+								</ul>
+								<ul class="swiper-slide">
+									{{/if}} {{if index==11}}
+								</ul>
+								{{/if}} {{/each}}
+							</div>
+							<div class="swiper-button-prev"><span class="glyphicon glyphicon-menu-left"></span></div>
+							<!--前进按钮-->
+							<div class="swiper-button-next"><span class="glyphicon glyphicon-menu-right"></span></div>
+							<!--后退按钮-->
+						</div>
+
+					</div>
+					{{/each}}
+				</div>
+				{{/each}}
+
+			</div>
+		</div>
+		<!-- 爱生活 -->
+		<div id="more" class="J_f_lift">
+			<div class="ftit">
+				<div class="grid_c1 ftit_inner">
+					<h3>还没逛够</h3>
+				</div>
+			</div>
+		</div>
+
+		<!-- 还没逛够 -->
+		<div  class="J_more">
+			{{each moregoods good}}
+			<div class="more_item">
+				<a href="{{good.link}}">
+					<div class="more_img"><img src="{{good.img}}" alt=""></div>
+					<div class="more_info">
+						<div class="more_info_name">{{good.title}}</div>
+						<div class="more_info_price">{{good.price}}</div>
+					</div>
+				</a>
+			</div>
+			{{/each}}
+		</div>
+
+		<footer class="footer">
+			<div class="mod_services">
+				<ul>
+					<li><i class="d"></i>
+						<div class="txt">品类齐全，轻松购物</div>
+					</li>
+					<li><i class="k"></i>
+						<div class="txt">多仓直发，极速配送</div>
+					</li>
+					<li><i class="h"></i>
+						<div class="txt">正品行货，精致服务</div>
+					</li>
+					<li><i class="s"></i>
+						<div class="txt">天天低价，畅选无忧</div>
+					</li>
+				</ul>
+			</div>
+			<div class="mod_help clearfix">
+				{{each help item}}
+				<div class="mod_help_item">
+					<h5 class="mod_help_item_txt">{{item.tit}}</h5>
+					<ul>
+						{{each item.con con}}
+						<li><a href="{{con.link}}">{{con.text}}</a></li>
+						{{/each}}
+					</ul>
+				</div>
+				{{/each}}
+				<div class="mod_help_item">
+					<h5 class="mod_help_item_txt">京东自营覆盖区县</h5>
+					<p>京东已向全国2661个区县提供自营配送服务，支持货到付款、POS机刷卡和售后上门服务。</p>
+					<a href="http://help.jd.com/user/issue/103-983.html">查看详情&gt;</a>
+				</div>
+			</div>
+
+			<div class="mod_copyright">
+				<ul class="clearfix">
+					{{each copyright item}}
+					<li><a href="{{item.link}}">{{item.text}}</a></li>
+					{{/each}}
+				</ul>
+			</div>
+			<p>京公网安备 11000002000088号 | 京ICP证070359号 | 互联网药品信息服务资格证编号(京)-经营性-2014-0008 | 新出发京零 字第大120007号<br>互联网出版许可证编号新出网证(京)字150号 |
+				出版物经营许可证 | 网络文化经营许可证京网文[2014]2148-348号 | 违法和不良信息举报电话：4006561155<br> Copyright © 2004 - 2017 京东JD.com 版权所有 | 消费者维权热线：4006067733经营证照<br>				京东旗下网站：京东支付 | 京东云</p>
+		</footer>
+
+		<!-- 直达电梯 -->
+		<ul class="lift_list">
+			<li class="lift_item lift_item_first lift_item_on"><a href="#enjoy" class="lift_btn"><span class="lift_btn_txt">享品质</span></a></li>
+			<li class="lift_item"><a href="#love" class="lift_btn"><span class="lift_btn_txt">服饰美妆</span></a></li>
+			<li class="lift_item"><a href="javascript:;" class="lift_btn"><span class="lift_btn_txt">家电手机</span></a></li>
+			<li class="lift_item"><a href="javascript:;" class="lift_btn"><span class="lift_btn_txt">电脑数码</span></a></li>
+			<li class="lift_item"><a href="javascript:;" class="lift_btn"><span class="lift_btn_txt">3 C运动</span></a></li>
+			<li class="lift_item"><a href="javascript:;" class="lift_btn"><span class="lift_btn_txt">爱吃</span></a></li>
+			<li class="lift_item"><a href="javascript:;" class="lift_btn"><span class="lift_btn_txt">母婴家居</span></a></li>
+			<li class="lift_item"><a href="javascript:;" class="lift_btn"><span class="lift_btn_txt">图书汽车</span></a></li>
+			<li class="lift_item"><a href="javascript:;" class="lift_btn"><span class="lift_btn_txt">游戏金融</span></a></li>
+			<li class="lift_item"><a href="javascript:;" class="lift_btn"><span class="lift_btn_txt">旅行健康</span></a></li>
+			<li class="lift_item"><a href="#more" class="lift_btn"><span class="lift_btn_txt">还没逛够</span></a></li>
+			<li class="lift_item lift_item_top"><a href="javascript:;" class="lift_btn"><span class="lift_btn_txt">顶部<i class="lift_btn_arrow"><!--&#xe606;--></i></span></a></li>
+		</ul>
+
+		<!-- 右侧边栏 -->
+		<div class="J_toolbar">
+			<div class="toolbar_tabs">
+				<div class="toolbar-tab tbar-tab-jdvip">
+					<i class="tab-ico"></i>
+					<i class="tab-tip"></i>
+					<em class="tab-text">京东会员</em>
+				</div>
+				<div class="toolbar-tab tbar-tab-cart">
+					<i class="tab-ico"></i>
+					<em class="tab-text">购物车</em>
+				</div>
+				<div class="toolbar-tab tbar-tab-follow">
+					<i class="tab-ico"></i>
+					<em class="tab-text">我的关注</em>
+				</div>
+				<div class="toolbar-tab tbar-tab-history">
+					<i class="tab-ico"></i>
+					<em class="tab-text">我的足迹</em>
+				</div>
+				<div class="toolbar-tab tbar-tab-message">
+					<i class="tab-ico"></i>
+					<em class="tab-text">我的消息</em>
+				</div>
+				<div class="toolbar-tab tbar-tab-jimi">
+					<i class="tab-ico"></i>
+					<em class="tab-text">资讯JIMI</em>
+				</div>
+				<div class="toolbar-tab tbar-tab-top">
+					<i class="tab-ico"></i>
+				</div>
+				<div class="toolbar-tab tbar-tab-feedback">
+					<i class="tab-ico"></i>
+				</div>
+			</div>
+		</div>
+		<script src="./scripts/carousel.js"></script>
+		<script src="./scripts/index.js"></script>
+		<script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+		<script>
+			$('#close').click(function () {
+				$('.header').fadeOut();
+
+			})
+			// 定位
+			$('.location,.place_list').hover(function () {
+				$('.place_list').show();
+				$('.location').addClass('location_hover');
+			}, function () {
+				$('.place_list').hide();
+				$('.location').removeClass('location_hover');
+			})
+			// 我的京东
+			$('.myjd,.myjd_list').hover(function () {
+				$('.myjd_list').show();
+				$('.myjd').addClass('myjd_hover');
+			}, function () {
+				$('.myjd_list').hide();
+				$('.myjd').removeClass('myjd_hover');
+			})
+			// 客户服务
+			$('.khservice,.khservice_list').hover(function () {
+				$('.khservice_list').show();
+				$('.khservice').addClass('myjd_hover');
+			}, function () {
+				$('.khservice_list').hide();
+				$('.khservice').removeClass('myjd_hover');
+			})
+			// 网址导航
+			$('.sitenav,.sitenav_list').hover(function () {
+				$('.sitenav_list').show();
+				$('.sitenav').addClass('myjd_hover');
+			}, function () {
+				$('.sitenav_list').hide();
+				$('.sitenav').removeClass('myjd_hover');
+			})
+
+			$('.place_item a').click(function () {
+				$(this).addClass('place_item_hover').parent().siblings().find('a').removeClass('place_item_hover');
+				$('.place').text($(this).text());
+			})
+			
+			// $('a').attr('target','_blank');
+			
+			var petname=$.cookie('petname');
+			if (petname) {
+				$('.fr li:first-of-type').empty().html(`<a href="">${petname}</a>`);
+			}
+		</script>
+		
+	</body>
+	<html>

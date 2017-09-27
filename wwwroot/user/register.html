@@ -1,0 +1,281 @@
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="CGT">
+		<title>个人注册</title>
+		<script src='https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js'></script>
+		<style>
+			* {
+				/* box-sizing: border-box; */
+				text-decoration: none;
+			}
+
+			body {
+				margin: 0;
+				color: #666;
+				font-size: 14px;
+			}
+
+			.header-wrap {
+				width: 100%;
+				height: 110px;
+				background: url('../images/headbg.jpg') repeat-x left bottom;
+			}
+
+			.header-inner {
+				width: 88%;
+				height: 100%;
+				margin: 0 auto;
+				/* border: 1px solid red; */
+			}
+
+			.logo {
+				display: inline-block;
+				margin-top: 25px;
+				width: 160px;
+				height: 50px;
+				background: url('../images/icon.png') no-repeat;
+				float: left;
+			}
+
+			.welcome {
+				font-size: 24px;
+				color: #333;
+				margin-top: 40px;
+				margin-left: 20px;
+				float: left;
+			}
+
+			.login {
+				font-size: 16px;
+				color: #999;
+				float: right;
+				margin-top: 55px;
+			}
+
+			.login a {
+				color: #333;
+			}
+
+			.main {
+				padding-top: 50px;
+				width: 60%;
+				margin: 0 auto;
+				/* border: 1px solid red; */
+				display: flex;
+				justify-content: space-between;
+				border-bottom: 1px solid #ddd;
+				margin-bottom: 50px;
+				padding: 50px 200px;
+			}
+
+			.inp {
+				width: 400px;
+				height: 54px;
+				border: 1px solid #ddd;
+				display: flex;
+				font-size: 14px;
+			}
+
+			.phone {
+				border-right: 1px solid #ddd;
+			}
+
+			.inp-title {
+				width: 110px;
+				text-align: center;
+				line-height: 54px;
+				margin-right: 20px;
+			}
+
+			.inp input {
+				outline: none;
+				border: 0;
+			}
+
+			.inp input::-webkit-input-placeholder {
+				/* color: #ccc; */
+				color: rgb(204, 204, 204);
+			}
+
+			.inp-tip i {
+				display: inline-block;
+				width: 16px;
+				height: 16px;
+				background: url('../images/icon.png') no-repeat;
+				background-position: 0px -100px;
+				vertical-align: middle;
+				margin-right: 10px;
+			}
+
+			.inp-tip {
+				color: #ccc;
+				width: 400px;
+				height: 32px;
+				line-height: 32px;
+			}
+
+
+			.oth-register {
+				margin-left: 100px;
+				padding-left: 90px;
+				width: 100%;
+				border-left: solid 1px #e6e6e6;
+			}
+
+			.oth-register div {
+				display: flex;
+				flex-grow: 1;
+				flex-shrink: 0;
+				width: 160px;
+				height: 40px;
+				/* border: 1px solid red; */
+				align-items: center;
+			}
+
+			.oth-register span {
+				width: 120px;
+				/* border: 1px solid red; */
+			}
+
+			.oth-register i {
+				display: inline-block;
+				/* border: 1px solid red; */
+				width: 30px;
+				height: 30px;
+				background: url('../images/icon.png') no-repeat;
+				background-position: 0px -50px;
+				vertical-align: middle;
+				margin-right: 10px;
+			}
+
+			.i-company {
+				padding-bottom: 30px;
+			}
+
+			.i-global {
+				border-top: 1px solid #ddd;
+				padding: 0;
+				padding-top: 30px;
+			}
+
+			.i-global i {
+
+				background-position: -50px -50px;
+			}
+
+			.register {
+				text-align: center;
+				display: block;
+				background-color: #EE2222;
+				color: white;
+			}
+
+			.footer {
+				font-size: 12px;
+				margin-bottom: 40px;
+				color: #999;
+			}
+
+			.links {
+				height: 40px;
+				clear: both;
+				list-style: none;
+				width: 60%;
+				/* border: 1px solid red; */
+				margin: 0 auto;
+				/* padding: 20px; */
+			}
+
+			.links li {
+				padding: 0 10px;
+				float: left;
+				border-right: 1px solid #999;
+				/* margin: 10px 0; */
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="header-wrap">
+			<div class="header-inner">
+				<a href="http://www.jd.com" class="logo"></a>
+				<div class="welcome">欢迎注册</div>
+				<div class="login">已有账号？ <a href="/user/login.html">请登录</a></div>
+			</div>
+		</header>
+		<main class="main">
+			<div class="form">
+				<form action="/api/v1/user/register" method="post">
+					<div class="inp">
+						<div class="inp-title">用&#x3000;户&#x3000;名</div>
+						<input type="text" name="petname" placeholder="您的账户名和登录名" required>
+					</div>
+					<div class="inp-tip"><i></i>支持中文、字母、数字、“-”“_”的组合，4-20个字符</div>
+					<div class="inp">
+						<div class="inp-title">设&nbsp;置&nbsp;密&nbsp;码</div>
+						<input type="text" name="password" placeholder="建议至少使用两种字符组合" required>
+					</div>
+					<div class="inp-tip"><i></i>建议使用字母、数字和符号两种及以上的组合，6-20个字符</div>
+					<div class="inp">
+						<div class="inp-title">确&nbsp;人&nbsp;密&nbsp;码</div>
+						<input type="text" name="repsw" placeholder="请再次输入密码" required>
+					</div>
+					<div class="inp-tip"><i></i>请再次输入密码</div>
+					<div class="inp">
+						<div class="inp-title phone">中国&nbsp;0086</div>
+						<input type="text" name="phone" placeholder="建议使用常用手机" required>
+					</div>
+					<div class="inp-tip"><i></i>完成验证后，你可以用该手机登录和找回密码</div>
+					<div class="inp">
+						<div class="inp-title">验&#x3000;证&#x3000;码</div>
+						<input type="text" name="" placeholder="请输入验证码" required>
+					</div>
+					<div class="inp-tip"><i></i>看不清？点击图片更换验证码</div>
+					<div class="inp">
+						<div class="inp-title">手机验证码</div>
+						<input type="text" name="" placeholder="请输入手机验证码" required>
+					</div>
+					<div class="inp-tip"></div>
+					<input type="submit" class="inp register" name="" value="立即注册">
+				</form>
+			</div>
+			<div class="oth-register">
+				<div class="i-company">
+					<i></i><span>企业用户注册</span>
+				</div>
+				<div class="i-global">
+					<i></i><span>INTERNATIONAL CUSTOMERS</span>
+				</div>
+			</div>
+		</main>
+		<footer class="footer">
+			<ul class="links">
+				<li>关于我们</li>
+				<li>联系我们</li>
+				<li>人才招聘</li>
+				<li>商家入驻</li>
+				<li>广告服务</li>
+				<li>手机京东</li>
+				<li>友情链接</li>
+				<li>销售联盟</li>
+				<li>京东社区</li>
+				<li>京东公益</li>
+				<li>English Site</li>
+			</ul>
+			<center>Copyright©2004-2016 京东JD.com 版权所有</center>
+		</footer>
+		<script>
+			$('form').submit(function (e) {
+				e.preventDefault();
+				$.post(this.action, $(this).serialize(), function (data) {
+					console.log(data);
+					if (data.code == 'success') {
+						location.href = '/user/login.html';
+					}
+				})
+			})
+		</script>
+	</body>
+	<html>

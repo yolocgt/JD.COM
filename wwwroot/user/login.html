@@ -1,0 +1,366 @@
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="CGT">
+		<title>京东-欢迎登录</title>
+		<script src='https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js'></script>
+		<style>
+			* {
+				box-sizing: border-box;
+				text-decoration: none;
+			}
+
+			a {
+				color: inherit;
+			}
+
+			body {
+				margin: 0;
+				color: #666;
+				font-size: 14px;
+			}
+
+			.header-wrap {
+				width: 100%;
+				height: 80px;
+				/* background: url('../images/headbg.jpg') repeat-x left bottom; */
+				/* border: 1px solid red; */
+			}
+
+			.header-inner {
+				clear: both;
+				width: 990px;
+				height: 100%;
+				margin: 0 auto;
+				/* border: 1px solid red; */
+			}
+
+			.logo {
+				width: 170px;
+				height: 60px;
+				float: left;
+				margin-top: 15px;
+			}
+
+			.welcome {
+				font-size: 24px;
+				color: #333;
+				margin-top: 40px;
+				margin-left: 20px;
+				float: left;
+			}
+
+			.loginPSQ {
+				font-size: 16px;
+				color: #999;
+				float: right;
+				margin-top: 55px;
+			}
+
+			.loginPSQ i {
+				display: inline-block;
+				width: 18px;
+				height: 14px;
+				background: url('../images/q-icon.png') no-repeat;
+				vertical-align: middle;
+				margin: 0 5px;
+			}
+
+			.loginPSQ a {
+				color: #999;
+				font-size: 12px;
+			}
+
+			.tips-wrapper {
+				background-color: #FFF8F0;
+				border: 1px solid yellow;
+				/* height: 70px; */
+			}
+
+			.tips-inner {
+				padding: 10px;
+				text-align: center;
+				color: #ffa258;
+				font-size: 12px;
+				font-family: monospace;
+			}
+
+			.tips-inner i {
+				display: inline-block;
+				width: 16px;
+				height: 16px;
+				background: url('../images/icon-tips.png') no-repeat;
+				vertical-align: middle;
+				color: #333;
+			}
+
+			.tips-inner a {
+				color: #333;
+			}
+
+			.banner-wrap {
+				height: 475px;
+				background-color: #D11E20;
+				margin-bottom: 20px;
+			}
+
+			.banner {
+				width: 990px;
+				margin: 0 auto;
+				position: relative;
+			}
+
+			.banner img {
+				width: 100%;
+				height: 100%;
+			}
+
+			.login-form {
+				width: 346px;
+				height: 361px;
+				background-color: white;
+				position: absolute;
+				right: 0;
+				top: 40px;
+			}
+
+			.login-type {
+				display: flex;
+			}
+
+			.login-type a {
+				display: inline-block;
+				width: 100%;
+				/* border: 1px solid red; */
+				margin: 10px 0;
+				padding: 0;
+			}
+
+			.login-type a:first-of-type {
+				border-right: 1px solid #eee;
+			}
+
+			.login-type div {
+				width: 50%;
+				/* height: 50px; */
+				/* border: 1px solid green;  */
+				border-bottom: 1px solid #eee;
+				/* font-weight: 700; */
+				font-size: 18px;
+				/* line-height: 50px; */
+				text-align: center;
+			}
+
+			.login-form form {
+				margin-top: 20px;
+			}
+
+			.inp {
+				width: 306px;
+				height: 38px;
+				margin: 0 auto;
+				border: 1px solid #ddd;
+				display: flex;
+				margin-bottom: 20px;
+			}
+
+			.inp input {
+				flex-grow: 1;
+				padding-left: 10px;
+				outline: none;
+				border: none;
+			}
+
+			.inp input::-webkit-input-placeholder {
+				color: #999;
+			}
+
+			.inp i {
+				display: inline-block;
+				width: 38px;
+				height: 38px;
+				padding: 0;
+				border-right: 1px solid #ddd;
+				background: url('../images/pwd-icons-new.png') no-repeat;
+			}
+
+			form .inp:last-of-type i {
+				background-position: -48px 0;
+			}
+
+			.forget-pwd {
+				width: 306px;
+				height: 38px;
+				margin: 0 auto;
+				display: flex;
+				color: #555;
+				font-size: 12px;
+				justify-content: flex-end;
+			}
+
+			.login {
+				display: block;
+				width: 306px;
+				/* height: 38px; */
+				/* line-height: 38px; */
+				padding: 3px 0;
+				margin: 0 auto;
+				text-align: center;
+				font-size: 20px;
+				border: 1px solid #e85356;
+				color: white;
+				background-color: #e4393c;
+				/* justify-content: flex-end; */
+			}
+
+			.coagent {
+				display: flex;
+				justify-content: space-between;
+			}
+
+			.coagent {
+				background-color: #FCFCFC;
+				width: 100%;
+				/* height: 50px; */
+				font-size: 12px;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				padding: 10px 20px;
+				box-sizing: border-box;
+			}
+
+			.coagent span {
+				color: #b61d1d;
+				font-size: 15px;
+			}
+
+			.coagent span i {
+				display: inline-block;
+				width: 16px;
+				height: 16px;
+				color: #b61d1d;
+				background: url('../images/pwd-icons-new.png') -104px -75px no-repeat;
+				vertical-align: middle;
+				margin-right: 5px;
+			}
+
+			.tencent i {
+				display: inline-block;
+				width: 19px;
+				height: 19px;
+				background: url('../images/QQ-weixin.png') no-repeat;
+				vertical-align: middle;
+			}
+
+			.tencent i:last-child {
+				background-position: -20px 0;
+			}
+
+			.footer {
+
+				font-size: 12px;
+				margin-bottom: 40px;
+				color: #666;
+			}
+
+			.links {
+				height: 40px;
+				clear: both;
+				list-style: none;
+				width: 60%;
+				/* border: 1px solid red; */
+				margin: 0 auto;
+				/* padding: 20px; */
+			}
+
+			.links li {
+				padding: 0 10px;
+				float: left;
+				border-right: 1px solid #999;
+				/* margin: 10px 0; */
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="header-wrap">
+			<div class="header-inner">
+				<img class="logo" src="../images/logo-201305-b.png" alt="">
+				<div class="welcome">欢迎登录</div>
+				<div class="loginPSQ"><a><i></i>登录页面，调查问卷</a></div>
+			</div>
+
+			<div class="tips-wrapper">
+				<div class="tips-inner">
+					<i></i>
+					<span>依据《网络安全法》，为保障您的账户安全和正常使用，请尽快完成手机号验证！ 新版 <a>京东隐私政策</a> 已上线，将更有利于保护您的个人隐私。</span>
+				</div>
+			</div>
+		</div>
+		<main class="banner-wrap">
+			<div class="banner">
+				<img src="../images/banner.jpg" alt="">
+				<div class="login-form">
+					<div class="login-type">
+						<div class="scan"><a href="#">扫码登录</a></div>
+						<div class="account"><a href="#">账户登录</a></div>
+					</div>
+					<form action="/api/v1/user/signin" method="post">
+						<div class="inp">
+							<i></i>
+							<input type="text" name="petname" placeholder="邮箱/用户名/已验证手机" required>
+						</div>
+						<div class="inp">
+							<i></i>
+							<input type="password" name="password" placeholder="密码" required>
+						</div>
+						<div class="forget-pwd">
+							忘记密码
+						</div>
+						<input type="submit" class="login" name="" value="登&#x3000;&nbsp;录">
+					</form>
+					<div class="coagent">
+						<div class="tencent">
+							<i></i>&nbsp;QQ&#x3000|&#x3000<i></i>&nbsp;微信
+						</div>
+						<span><i></i><a href="/user/register.html">立即注册</a></span>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer class="footer">
+			<ul class="links">
+				<li>关于我们</li>
+				<li>联系我们</li>
+				<li>人才招聘</li>
+				<li>商家入驻</li>
+				<li>广告服务</li>
+				<li>手机京东</li>
+				<li>友情链接</li>
+				<li>销售联盟</li>
+				<li>京东社区</li>
+				<li>京东公益</li>
+				<li>English Site</li>
+			</ul>
+			<center>Copyright©2004-2016 京东JD.com 版权所有</center>
+		</footer>
+		<script>
+			$('form').submit(function (e) {
+				e.preventDefault();
+				$.post(this.action, $(this).serialize(), function (data) {
+					console.log(data);
+					if (data.code == 'success') {
+						location.href = '/';
+						// location.href='/index.html';
+					}
+					else {
+						alert(data.code + '  ' + data.message);
+					}
+				})
+
+			})
+		</script>
+	</body>
+	<html>
