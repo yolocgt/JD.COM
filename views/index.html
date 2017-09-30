@@ -5,6 +5,10 @@
 		<meta name="author" content="CGT">
 		<title>京东(JD.COM)</title>
 		<script src='https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js'></script>
+		
+		<script src="/js/jquery.countdown-zh-CN.js"></script>
+		<script src="/js/jquery.countdown.js"></script>
+		<script src="/js/jquery.plugin.min.js"></script>
 		<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script src="./js/unslider.min.js"></script>
 		<script src="./js/swiper.min.js"></script>
@@ -245,19 +249,19 @@
 						当前场次
 					</div>
 					<div class="time">
-						<div class="time_item">00
+						<div id="hour" class="time_item">00
 						</div>
 						<div class="separate">
 							<i></i>
 							<i></i>
 						</div>
-						<div class="time_item">00
+						<div id="minute" class="time_item">00
 						</div>
 						<div class="separate">
 							<i></i>
 							<i></i>
 						</div>
-						<div class="time_item">00
+						<div id="second" class="time_item">00
 						</div>
 					</div>
 					<div class="sk_cd_tip">
@@ -857,6 +861,19 @@
 			if (petname) {
 				$('.fr li:first-of-type').empty().html(`<a href="">${petname}</a>`);
 			}
+			
+			// 倒计时
+			var newYear = new Date('2017-09-30 17:00:00');
+				$('#show').countdown({
+					// until 目标时间
+					until: newYear,
+					// 设置是否在个位数前加0
+					padZeroes: true,
+				});
+				console.log($('#show').countdown('getTimes')[]);
+				$('#hour').text($.countdown('getTimes')[4]);
+				$('#minute').text($('#show').countdown('getTimes')[5]);
+				$('#second').text($('#show').countdown('getTimes')[6]);
 		</script>
 		
 	</body>
